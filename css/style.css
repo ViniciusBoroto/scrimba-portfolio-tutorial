@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-sans: 'Poppins', sans-serif;
+    --ff-mono: 'Ubuntu Mono', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --clr-primaryRed: #B90012;
+    --clr-darkRed: #520008;
+    --clr-brightRed: #FF5C6C;
+    --clr-grey: #DAD6D6;
+    --clr-black: #2F2D2E;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General styles */
+
+body {
+    background: var(--clr-black);
+    color: white;
+    font-family: var(--ff-sans);
+    font-size: var(--fs-body);
+    line-height: 1.6rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+
+h1 { font-size: var(--fs-h1);}
+h2 { font-size: var(--fs-h2);}
+h3 { font-size: var(--fs-h3);}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__subtitle {
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-black);
+    color: white;
+}
+
+.section__
