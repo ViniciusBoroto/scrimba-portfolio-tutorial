@@ -9,11 +9,11 @@
 }
 
 :root {
-    --ff-sans: 'Poppins', sans-serif;
+    --ff-sans: 'Roboto', sans-serif;
     --ff-mono: 'Ubuntu Mono', monospace;
 
     --fw-reg: 300;
-    --fw-bold: 900;
+    --fw-bold: 700;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -23,8 +23,8 @@
     --clr-primaryRed: #B90012;
     --clr-darkRed: #520008;
     --clr-brightRed: #FF5C6C;
-    --clr-grey: #DAD6D6;
-    --clr-black: #2F2D2E;
+    --clr-grey: #fcfcfc;
+    --clr-black: #202020;
 }
 
 @media (min-width: 800px) {
@@ -38,6 +38,8 @@
 
 /* General styles */
 
+nav { display: none;}
+
 body {
     background: var(--clr-black);
     color: white;
@@ -49,6 +51,10 @@ body {
 img {
     display: block;
     max-width: 100%;
+}
+
+section {
+    padding: 5em 2em;
 }
 
 /* Typography */
@@ -67,14 +73,56 @@ h3 { font-size: var(--fs-h3);}
     margin-bottom: .25em;
 }
 
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+    font-weight: var(--fw-bold);
+    display: block;
+}
+
 .section__subtitle {
     font-size: var(--fs-h3);
 }
 
 .section__subtitle--intro,
 .section__subtitle--about {
-    background: var(--clr-black);
+    background: var(--clr-primaryRed);
     color: white;
 }
 
-.section__
+section.my-skills,
+section.my-work {
+    background: var(--clr-grey);
+    color: #2F2D2E;
+}
+
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0px auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    .section__title {
+        grid-area: title;
+    }
+    .section__subtitle {
+        grid-area: subtitle;
+    }
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+    }
+}
